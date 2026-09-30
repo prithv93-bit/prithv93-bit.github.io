@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prithvi Mehta — Creative Producer, AI Content Creator, Photographer and Copywriter.">
+<title>Prithvi Mehta — Creative Producer & Photographer</title>
+<style>
+  :root {
+    --bg:#090909;
+    --panel:#111111;
+    --panel2:#151515;
+    --text:#f4f2ec;
+    --muted:#a5a5a5;
+    --line:#252525;
+    --accent:#d7ff4f;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height:1.5;
+  }
+  a { color:inherit; text-decoration:none; }
+  .wrap { width:min(1180px, calc(100% - 40px)); margin:auto; }
+  header {
+    min-height:86vh; display:flex; align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow {
+    text-transform:uppercase; letter-spacing:.16em; color:var(--accent);
+    font-size:12px; font-weight:700; margin-bottom:22px;
+  }
+  h1 {
+    font-size:clamp(54px, 9vw, 118px); line-height:.9;
+    letter-spacing:-.065em; margin:0; max-width:1000px;
+  }
+  .hero-copy {
+    margin-top:30px; max-width:730px; color:#c4c4c4;
+    font-size:clamp(17px, 2vw, 22px);
+  }
+  .hero-tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .tag {
+    border:1px solid #343434; border-radius:999px; padding:8px 13px;
+    color:#d4d4d4; font-size:13px;
+  }
+  nav {
+    position:sticky; top:0; z-index:20; backdrop-filter:blur(16px);
+    background:rgba(9,9,9,.82); border-bottom:1px solid var(--line);
+  }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; min-height:64px; }
+  .brand { font-weight:800; letter-spacing:-.03em; }
+  .navlinks { display:flex; gap:24px; font-size:13px; color:#bdbdbd; }
+  .navlinks a:hover { color:var(--text); }
+  section { padding:105px 0; border-bottom:1px solid var(--line); }
+  .section-top { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:42px; }
+  .section-num { color:var(--accent); font-size:12px; letter-spacing:.16em; font-weight:700; }
+  h2 { font-size:clamp(38px, 5vw, 68px); line-height:1; letter-spacing:-.055em; margin:7px 0 0; }
+  .section-intro { max-width:450px; color:var(--muted); font-size:15px; }
+  .work-group { margin-top:55px; }
+  .group-head { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:13px; margin-bottom:18px; }
+  .group-head h3 { margin:0; font-size:19px; letter-spacing:-.02em; }
+  .group-head span { color:#777; font-size:12px; text-transform:uppercase; letter-spacing:.1em; }
+  .video-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; }
+  .video-card { background:var(--panel); border:1px solid var(--line); transition:.25s ease; }
+  .video-card:hover { transform:translateY(-4px); border-color:#444; }
+  .thumb-wrap { position:relative; aspect-ratio:16/9; overflow:hidden; background:#000; }
+  .thumb-wrap img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+  .video-card:hover .thumb-wrap img { transform:scale(1.025); }
+  .play {
+    position:absolute; left:18px; bottom:18px; width:43px; height:43px;
+    display:grid; place-items:center; border-radius:50%; background:var(--accent); color:#111;
+    font-size:14px; padding-left:2px;
+  }
+  .video-meta { display:flex; justify-content:space-between; gap:15px; padding:16px 17px 18px; }
+  .video-meta span { color:#777; font-size:12px; }
+  .video-meta strong { font-size:14px; }
+  .photo-intro {
+    max-width:720px; color:#aaa; font-size:17px; margin-top:-20px; margin-bottom:38px;
+  }
+  .photo-grid {
+    columns:3 280px; column-gap:14px;
+  }
+  .photo-card {
+    width:100%; padding:0; margin:0 0 14px; border:0; background:none;
+    cursor:zoom-in; display:block; break-inside:avoid; overflow:hidden;
+  }
+  .photo-card img {
+    width:100%; height:auto; display:block; border-radius:2px;
+    transition:transform .45s ease, filter .35s ease;
+  }
+  .photo-card:hover img { transform:scale(1.018); filter:brightness(.88); }
+  .photo-note { margin-top:18px; color:#666; font-size:12px; }
+  .profile {
+    display:grid; grid-template-columns:1fr 1.25fr; gap:70px; align-items:start;
+  }
+  .profile h3 { font-size:30px; letter-spacing:-.04em; margin:0 0 16px; }
+  .profile p { color:#aaa; max-width:650px; font-size:17px; }
+  .skills { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .skill { padding:15px 0; border-bottom:1px solid var(--line); color:#d1d1d1; font-size:14px; }
+  footer { padding:55px 0 70px; color:#777; font-size:13px; }
+  .lightbox {
+    position:fixed; inset:0; background:rgba(0,0,0,.94); z-index:100;
+    display:none; align-items:center; justify-content:center; padding:28px;
+  }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:94vw; max-height:90vh; object-fit:contain; }
+  .close {
+    position:absolute; top:18px; right:22px; width:45px; height:45px;
+    border:1px solid #444; background:#111; color:#fff; border-radius:50%;
+    font-size:25px; cursor:pointer;
+  }
+  @media (max-width:760px) {
+    .wrap { width:min(100% - 26px, 1180px); }
+    header { min-height:78vh; }
+    nav .inner { min-height:56px; }
+    .navlinks { gap:13px; font-size:11px; }
+    .navlinks a:nth-child(2) { display:none; }
+    section { padding:72px 0; }
+    .section-top { display:block; }
+    .section-intro { margin-top:20px; }
+    .video-grid { grid-template-columns:1fr; }
+    .profile { grid-template-columns:1fr; gap:35px; }
+    .photo-grid { columns:2 150px; column-gap:9px; }
+    .photo-card { margin-bottom:9px; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap inner">
+    <a class="brand" href="#top">PRITHVI MEHTA</a>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#photography">Photography</a>
+      <a href="#profile">Profile</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow">Creative Producer · AI Content · Photography</div>
+    <h1>Ideas that<br>look alive.</h1>
+    <p class="hero-copy">
+      Creative Producer and AI Content Creator working across storytelling, video,
+      content strategy, branded production, copywriting and photography.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Creative Production</span>
+      <span class="tag">AI Content Creation</span>
+      <span class="tag">Content Strategy</span>
+      <span class="tag">Photography</span>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-top">
+      <div>
+        <div class="section-num">01 — SELECTED WORK</div>
+        <h2>Video &amp; Content</h2>
+      </div>
+      <p class="section-intro">Selected projects across branded content, editorial, entertainment and digital storytelling.</p>
+    </div>
+    
+      <div class="work-group">
+        <div class="group-head"><h3>Pinkvilla Biz</h3><span>04 projects</span></div>
+        <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=yRWWq8Cvtb8" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/yRWWq8Cvtb8/hqdefault.jpg" alt="Pinkvilla Biz project 1" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Biz</span>
+            <strong>Project 01</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=k98UrvgGO9Q" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/k98UrvgGO9Q/hqdefault.jpg" alt="Pinkvilla Biz project 2" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Biz</span>
+            <strong>Project 02</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=zJtVDCmZBcM" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/zJtVDCmZBcM/hqdefault.jpg" alt="Pinkvilla Biz project 3" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Biz</span>
+            <strong>Project 03</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=p9A_HeJEsoQ" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/p9A_HeJEsoQ/hqdefault.jpg" alt="Pinkvilla Biz project 4" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Biz</span>
+            <strong>Project 04</strong>
+          </div>
+        </a></div>
+      </div>
+      <div class="work-group">
+        <div class="group-head"><h3>Pinkvilla Lifestyle</h3><span>03 projects</span></div>
+        <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=RuTHbH88w1U" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/RuTHbH88w1U/hqdefault.jpg" alt="Pinkvilla Lifestyle project 1" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Lifestyle</span>
+            <strong>Project 01</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=PkgCRPwowD0" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/PkgCRPwowD0/hqdefault.jpg" alt="Pinkvilla Lifestyle project 2" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Lifestyle</span>
+            <strong>Project 02</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=e_Sr9OCcL8s" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/e_Sr9OCcL8s/hqdefault.jpg" alt="Pinkvilla Lifestyle project 3" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Pinkvilla Lifestyle</span>
+            <strong>Project 03</strong>
+          </div>
+        </a></div>
+      </div>
+      <div class="work-group">
+        <div class="group-head"><h3>Other Work</h3><span>06 projects</span></div>
+        <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=4Yh7uKBZLog" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/4Yh7uKBZLog/hqdefault.jpg" alt="Other Work project 1" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 01</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=Kx-xf8c4_J0" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/Kx-xf8c4_J0/hqdefault.jpg" alt="Other Work project 2" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 02</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=RqRpcGrY6mg" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/RqRpcGrY6mg/hqdefault.jpg" alt="Other Work project 3" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 03</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=xRt86NGd_nM" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/xRt86NGd_nM/hqdefault.jpg" alt="Other Work project 4" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 04</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=Xr3TBrGapGY" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/Xr3TBrGapGY/hqdefault.jpg" alt="Other Work project 5" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 05</strong>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=mI5rWpazOYA" target="_blank" rel="noopener">
+          <div class="thumb-wrap">
+            <img src="https://i.ytimg.com/vi/mI5rWpazOYA/hqdefault.jpg" alt="Other Work project 6" loading="lazy">
+            <span class="play">▶</span>
+          </div>
+          <div class="video-meta">
+            <span>Other Work</span>
+            <strong>Project 06</strong>
+          </div>
+        </a></div>
+      </div>
+  </div>
+</section>
+
+<section id="photography">
+  <div class="wrap">
+    <div class="section-top">
+      <div>
+        <div class="section-num">02 — PHOTOGRAPHY</div>
+        <h2>Wildlife &amp; Nature</h2>
+      </div>
+      <p class="section-intro">A selection of wildlife photographs exploring animal behaviour, detail, atmosphere and the quiet moments between encounters.</p>
+    </div>
+    <p class="photo-intro">Photography has been part of my creative practice alongside production and storytelling. This collection focuses on wildlife and the visual language of the natural world.</p>
+    <div class="photo-grid">
+      
+      <button class="photo-card" type="button" data-full="photography/wildlife-01.webp" aria-label="Open wildlife photograph 01">
+        <img src="photography/wildlife-01.webp" alt="Wildlife photograph 01" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-02.webp" aria-label="Open wildlife photograph 02">
+        <img src="photography/wildlife-02.webp" alt="Wildlife photograph 02" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-03.webp" aria-label="Open wildlife photograph 03">
+        <img src="photography/wildlife-03.webp" alt="Wildlife photograph 03" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-04.webp" aria-label="Open wildlife photograph 04">
+        <img src="photography/wildlife-04.webp" alt="Wildlife photograph 04" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-05.webp" aria-label="Open wildlife photograph 05">
+        <img src="photography/wildlife-05.webp" alt="Wildlife photograph 05" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-06.webp" aria-label="Open wildlife photograph 06">
+        <img src="photography/wildlife-06.webp" alt="Wildlife photograph 06" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-07.webp" aria-label="Open wildlife photograph 07">
+        <img src="photography/wildlife-07.webp" alt="Wildlife photograph 07" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-08.webp" aria-label="Open wildlife photograph 08">
+        <img src="photography/wildlife-08.webp" alt="Wildlife photograph 08" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-09.webp" aria-label="Open wildlife photograph 09">
+        <img src="photography/wildlife-09.webp" alt="Wildlife photograph 09" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-10.webp" aria-label="Open wildlife photograph 10">
+        <img src="photography/wildlife-10.webp" alt="Wildlife photograph 10" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-11.webp" aria-label="Open wildlife photograph 11">
+        <img src="photography/wildlife-11.webp" alt="Wildlife photograph 11" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-12.webp" aria-label="Open wildlife photograph 12">
+        <img src="photography/wildlife-12.webp" alt="Wildlife photograph 12" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-13.webp" aria-label="Open wildlife photograph 13">
+        <img src="photography/wildlife-13.webp" alt="Wildlife photograph 13" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-14.webp" aria-label="Open wildlife photograph 14">
+        <img src="photography/wildlife-14.webp" alt="Wildlife photograph 14" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-15.webp" aria-label="Open wildlife photograph 15">
+        <img src="photography/wildlife-15.webp" alt="Wildlife photograph 15" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-16.webp" aria-label="Open wildlife photograph 16">
+        <img src="photography/wildlife-16.webp" alt="Wildlife photograph 16" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-17.webp" aria-label="Open wildlife photograph 17">
+        <img src="photography/wildlife-17.webp" alt="Wildlife photograph 17" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-18.webp" aria-label="Open wildlife photograph 18">
+        <img src="photography/wildlife-18.webp" alt="Wildlife photograph 18" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-19.webp" aria-label="Open wildlife photograph 19">
+        <img src="photography/wildlife-19.webp" alt="Wildlife photograph 19" loading="lazy">
+      </button>
+      <button class="photo-card" type="button" data-full="photography/wildlife-20.webp" aria-label="Open wildlife photograph 20">
+        <img src="photography/wildlife-20.webp" alt="Wildlife photograph 20" loading="lazy">
+      </button>
+    </div>
+    <div class="photo-note">Selected wildlife photography · © Prithvi Mehta</div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="section-top">
+      <div>
+        <div class="section-num">03 — PROFILE</div>
+        <h2>About</h2>
+      </div>
+    </div>
+    <div class="profile">
+      <div>
+        <h3>Creative Producer / AI Content Creator / Photographer</h3>
+        <p>
+          I work across the full creative process — from ideas and formats to scripts,
+          production, AI-assisted creation, publishing and performance. My background
+          also includes photography, copywriting, branded storytelling and digital content.
+        </p>
+      </div>
+      <div class="skills">
+        <div class="skill">AI Content Creation</div>
+        <div class="skill">End-to-End Production</div>
+        <div class="skill">Content Strategy</div>
+        <div class="skill">Script Writing</div>
+        <div class="skill">Photography / Videography</div>
+        <div class="skill">Social Media Strategy</div>
+        <div class="skill">Branded Content</div>
+        <div class="skill">Copywriting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Prithvi Mehta · Creative Producer &amp; Photographer</div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photography viewer">
+  <button class="close" id="closeLightbox" aria-label="Close">×</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  };
+  document.querySelectorAll('.photo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      lightboxImg.src = card.dataset.full;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
